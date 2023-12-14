@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cardio-vascular Assessment</title>
+    
+</head>
+
+<style>
+    /* Resetting default margin and padding */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Styling for upper section */
+    .upper-section {
+        background-color: lightblue;
+        height: 150px;
+        /* You can adjust the height as needed */
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+
+    /* Styling for half sections */
+    .half-section {
+        width: 49%;
+        float: left;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        border: 2px solid black;
+        height: 500px;
+        margin: 4px 4px 4px 4px;
+        background-color: rgb(114, 141, 190);
+
+    }
+
+    .video{
+        position: relative;
+        overflow: hidden;
+        margin-top: 25px;
+        padding-bottom: 56.25%;
+    }
+    .des{
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .ques{
+        margin-top: 25px;
+        font-size: 20px;
+    }
+    #sectionToDisplay{
+        margin-top: 25px;
+        font-size: 23px;
+
+    }
+    #sectionToDisplay1{
+        margin-top: 25px;
+        font-size: 23px;
+    }
+
+
+    
+
+    /* Additional styling for clarity */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    /* Clearfix for the float */
+    /* To ensure proper layout when using floats */
+    /* Not necessary if using newer CSS layout methods like Flexbox or Grid */
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+<body>
+    <div class="upper-section">
+        <h1>Cardio-Vascular Assessment</h1>
+        <p>Assess your Cardio-Vascular health using these simple tests</p>
+    </div>
+
+    <div class="half-section">
+        <h2>Cooper test</h2>
+        <p>A 12 min run</p>
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/OphEoVpd9Fs?si=CpFN0e_N4RWiiayB"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+                <p class="des">Check out the above video</p>
+              <form action="backend.php">          
+                <p class="ques"> Did you take the test: <input type="radio" name="confirm" id="showRadio">Yes <input type="radio" name="confirm" id="hideRadio">No</p>
+            <p id="sectionToDisplay" style="display: none;">
+                    State your was V02 Max score:<input type="text">
+                    <input type="submit" value="Submit">
+                </p>
+              </form>
+        </div>
+  
+        </div>
+    </div>
+    <div class="half-section">
+        <h2>Harved step test</h2>
+        <p>V02 test based on distance covered</p>
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/UoDUoW_YKm4?si=uLyM_mEBUUk2i_fx"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <p class="des">Check out the above video</p>
+              <form action="backend.php">  
+            <p class="ques"> Did you take the test: <input type="radio" name="confirmation" id="showRadio1">Yes <input type="radio" name="confirmation" id="hideRadio1">No</p>
+            <p id="sectionToDisplay1" style="display: none;">
+                State your was V02 Max score:<input type="text"></p>
+            <p class="sub">
+            </p>
+              </form>
+        </div>
+
+        
+
+    
+        
+    </div>
+
+    <script>
+
+        // Get references to the radio buttons and the section to display
+let showRadio = document.getElementById('showRadio');
+let hideRadio = document.getElementById('hideRadio');
+let sectionToDisplay = document.getElementById('sectionToDisplay');
+
+// Add event listeners to the radio buttons
+showRadio.addEventListener('change', function() {
+  if (showRadio.checked) {
+    sectionToDisplay.style.display = 'block';
+  }
+});
+
+hideRadio.addEventListener('change', function() {
+  if (hideRadio.checked) {
+    sectionToDisplay.style.display = 'none';
+  }
+});
+
+let showRadio1 = document.getElementById('showRadio1');
+let hideRadio1 = document.getElementById('hideRadio1');
+let sectionToDisplay1 = document.getElementById('sectionToDisplay1');
+
+// Add event listeners to the radio buttons
+showRadio.addEventListener('change', function() {
+  if (showRadio1.checked) {
+    sectionToDisplay1.style.display = 'block';
+  }
+});
+
+hideRadio.addEventListener('change', function() {
+  if (hideRadio1.checked) {
+    sectionToDisplay1.style.display = 'none';
+  }
+});
+
+    </script>
+
+</body>
+
+</html>

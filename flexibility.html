@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flexibility Assessment</title>
+
+</head>
+
+<style>
+    /* Resetting default margin and padding */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Styling for upper section */
+    .upper-section {
+        background-color: lightblue;
+        height: 150px;
+        /* You can adjust the height as needed */
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+
+    /* Styling for half sections */
+    .half-section {
+        width: 31%;
+        float: left;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        border: 2px solid black;
+        height: 500px;
+        margin: 10px 10px 10px 10px;
+        background-color: rgb(114, 141, 190);
+
+    }
+
+    .three{
+        margin-left: 52px;
+    }
+
+    .video {
+        position: relative;
+        overflow: hidden;
+        margin-top: 25px;
+        padding-bottom: 56.25%;
+    }
+
+    .des {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .ques {
+        margin-top: 25px;
+        font-size: 20px;
+    }
+
+    #sectionToDisplay {
+        margin-top: 25px;
+        font-size: 23px;
+
+    }
+
+    #sectionToDisplay1 {
+        margin-top: 25px;
+        font-size: 23px;
+    }
+
+
+
+
+    /* Additional styling for clarity */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    /* Clearfix for the float */
+    /* To ensure proper layout when using floats */
+    /* Not necessary if using newer CSS layout methods like Flexbox or Grid */
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+<body>
+    <div class="upper-section">
+        <h1>Flexibility Assessment</h1>
+        <p>Assess your Flexibility using these simple tests</p>
+    </div>
+<div class="three">
+    <div class="half-section">
+        <h2>Sit and reach test</h2>
+        <p>Stretch your fingers till your toes</p>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/S-UWdErmXuk?si=mVT2vU6Mznk8Zx2o"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <p class="des">Check out the above video</p>
+            <form action="backend.php">
+                <p class="ques"> Did you take the test: <input type="radio" name="confirm" id="showRadio">Yes <input
+                        type="radio" name="confirm" id="hideRadio">No</p>
+                <p id="sectionToDisplay" style="display: none;">
+                    State your was V02 Max score:<input type="text">
+                    <input type="submit" value="Submit">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="half-section">
+        <h2>Shoulder Mobility Assessment</h2>
+        <p>Do the exercises as prescribed in the video</p>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GL6kBBMtWkY?si=zmcemvCGwNnKEJYs"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <p class="des">Check out the above video</p>
+            <form action="backend.php">
+                <p class="ques"> Did you take the test: <input type="radio" name="confirmation" id="showRadio1">Yes
+                    <input type="radio" name="confirmation" id="hideRadio1">No
+                </p>
+                <p id="sectionToDisplay1" style="display: none;">
+                    State your was V02 Max score:<input type="text"></p>
+                <p class="sub">
+                </p>
+            </form>
+        </div>
+    </div>
+
+        <div class="half-section">
+            <h2>Hip flexor test </h2>
+            <p>This is a test to assess the hip movemement</p>
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SVyN8EGMzMU?si=hawc7ORnp8sTG5LA"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <p class="des">Check out the above video</p>
+                <form action="backend.php">
+                    <p class="ques"> Did you take the test: <input type="radio" name="confirmation" id="showRadio1">Yes
+                        <input type="radio" name="confirmation" id="hideRadio1">No
+                    </p>
+                    <p id="sectionToDisplay1" style="display: none;">
+                        State your was V02 Max score:<input type="text"></p>
+                    <p class="sub">
+                    </p>
+                </form>
+            </div>
+        </div>
+</div>
+
+
+
+
+    
+</body>
+</html>

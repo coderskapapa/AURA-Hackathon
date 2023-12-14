@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+/* Styling for wrapper and menu */
+ .content{
+  display: grid;
+  grid-gap: 1rem;
+ }
+.data{
+  border: 3px solid black;
+  height: 450px;
+  grid: template columns 25px 25px 25px 25px;
+  
+}
+
+h1{
+  text-align: center;
+}
+
+
+
+.status{
+  font-size: 20px;
+  text-align: center;
+}
+.video{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+
+button{
+  height: 50px;
+  width: 100px;
+  margin-left:44.5%;
+  font-size: 20px;
+  background-color: aqua;
+  border-radius: 20px;
+  cursor: pointer;
+
+}
+
+
+</style>
+
+
+<head>
+  <title>Balance and Coordination Assessment</title>
+</head>
+
+
+
+
+<body>
+  <h1>Balance and Coordination Assessment</h1>
+
+
+
+
+
+
+  <div class="content">
+
+    <div id="singleleg" class="data">
+      <h2>Do the below exercise</h2>
+      <p class="video"> <iframe width="350" height="200"
+          src="https://www.youtube.com/embed/Jvv7BFG3rPI?si=y4K_uYEVv5Dz1gAr" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe> </p>
+      <h2>Single Leg Stance</h2>
+      <button  class "sbutton" onclick="startSingleLegStance()">Start</button>
+      <p class="status">Time: <span id="singleLegTime">0</span> seconds</p>
+    </div>
+
+    <div id="tandem" class="data">
+      <h2>Do the below exercise</h2>
+      <p class="video">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/fqIlz8Dh5K4?si=yl5UfST0BSgCWkmF"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </p>
+      <h2>Tandem Stance</h2>
+      <button class "sbutton" onclick="startTandemStance()">Start</button>
+      <p class="status">Time: <span id="tandemTime">0</span> seconds</p>
+    </div>
+
+    <div id="heeltowalk" class="data">
+      <h2>Do the below exercise</h2>
+      <p class="video">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/f1Jt0xVqvtI?si=YKiZ7pOo4iGRl_x-"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </p>
+      <h2>Walking Heel-to-Toe</h2>
+      <button class "sbutton" onclick="startHeelToeWalk()">Start </button>
+      <p class="status">Status: <span id="heelToeStatus">Not started</span></p>
+    </div>
+
+    <div id="coordination" class="data">
+      <h2>Do the below exercise</h2>
+      <p class="video">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/GYe1WeAEbZY?si=ok0ditijC6dH6C8z"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </p>
+      <h2>Coordination Exercises</h2>
+      <button class "sbutton" onclick="startCoordinationTest()">Start</button>
+      <p class="status">Status: <span id="coordinationStatus">Not started</span></p>
+    </div>
+
+  </div>
+
+</body>
+
+  <script>
+    let singleLegTimer;
+    let singleLegTime = 0;
+  
+    function startSingleLegStance() {
+      singleLegTimer = setInterval(updateSingleLegTime, 1000);
+      setTimeout(stopSingleLegStance, 30000); // Change 10000 to the desired duration in milliseconds
+    }
+
+    function updateSingleLegTime() {
+      singleLegTime++;
+      document.getElementById("singleLegTime").innerText = singleLegTime;
+    }
+  
+    function stopSingleLegStance() {
+      clearInterval(singleLegTimer);
+      alert("Single Leg Stance assessment completed. Time: " + singleLegTime + " seconds");
+    }
+
+
+    let tandemTimer;
+let tandemTime = 0;
+
+function startTandemStance() {
+  tandemTimer = setInterval(updateTandemTime, 1000);
+  setTimeout(stopTandemStance, 30000); // Change 15000 to the desired duration in milliseconds
+}
+
+function updateTandemTime() {
+  tandemTime++;
+  document.getElementById("tandemTime").innerText = tandemTime;
+}
+
+function stopTandemStance() {
+  clearInterval(tandemTimer);
+  alert("Tandem Stance assessment completed. Time: " + tandemTime + " seconds");
+}
+
+let heelToeStatus = "Not started";
+
+function startHeelToeWalk() {
+  heelToeStatus = "In progress";
+  document.getElementById("heelToeStatus").innerText = heelToeStatus;
+  // Implement logic to track heel-to-toe walk, possibly using key events to simulate steps.
+  // Update the status when the walk is completed.
+}
+
+function stopHeelToeWalk() {
+  heelToeStatus = "Completed";
+  document.getElementById("heelToeStatus").innerText = heelToeStatus;
+  alert("Walking Heel-to-Toe assessment completed.");
+}
+
+let coordinationStatus = "Not started";
+
+function startCoordinationTest() {
+  coordinationStatus = "In progress";
+  document.getElementById("coordinationStatus").innerText = coordinationStatus;
+  // Implement logic for coordination exercises such as juggling, ball toss, etc.
+  // Update the status when the exercises are completed.
+}
+
+function stopCoordinationTest() {
+  coordinationStatus = "Completed";
+  document.getElementById("coordinationStatus").innerText = coordinationStatus;
+  alert("Coordination Exercises assessment completed.");
+}
+
+  
+    // Similar functions for Tandem Stance, Walking Heel-to-Toe, Coordination Exercises
+    // Implement timers and logic for each assessment
+    // Remember to set appropriate durations and handle the assessment completion
+  
+  </script>
+</html>
